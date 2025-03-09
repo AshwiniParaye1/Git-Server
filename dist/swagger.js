@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.specs = void 0;
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
+const path_1 = __importDefault(require("path"));
 const options = {
     definition: {
         openapi: "3.0.0",
@@ -93,6 +94,6 @@ const options = {
             }
         }
     },
-    apis: [__dirname + "/*.ts"] // Use absolute path
+    apis: [path_1.default.join(__dirname, "index.ts"), path_1.default.join(__dirname, "*.ts")]
 };
 exports.specs = (0, swagger_jsdoc_1.default)(options);

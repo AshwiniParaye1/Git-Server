@@ -1,4 +1,5 @@
 import swaggerJsdoc from "swagger-jsdoc";
+import path from "path";
 
 const options: swaggerJsdoc.Options = {
   definition: {
@@ -88,7 +89,7 @@ const options: swaggerJsdoc.Options = {
       }
     }
   },
-  apis: [__dirname + "/*.ts"] // Use absolute path
+  apis: [path.join(__dirname, "index.ts"), path.join(__dirname, "*.ts")]
 };
 
 export const specs = swaggerJsdoc(options);
