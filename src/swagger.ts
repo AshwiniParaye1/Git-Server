@@ -10,8 +10,8 @@ const options: swaggerJsdoc.Options = {
     },
     servers: [
       {
-        url: "https://git-server-lo5u.onrender.com/",
-        description: "Development server"
+        url: process.env.BASE_URL || "https://git-server-lo5u.onrender.com",
+        description: "Server"
       }
     ],
     components: {
@@ -88,7 +88,7 @@ const options: swaggerJsdoc.Options = {
       }
     }
   },
-  apis: ["./src/*.ts"] // Path to the API docs
+  apis: [__dirname + "/*.ts"] // Use absolute path
 };
 
 export const specs = swaggerJsdoc(options);

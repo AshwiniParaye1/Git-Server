@@ -15,8 +15,8 @@ const options = {
         },
         servers: [
             {
-                url: "https://git-server-lo5u.onrender.com/",
-                description: "Development server"
+                url: process.env.BASE_URL || "https://git-server-lo5u.onrender.com",
+                description: "Server"
             }
         ],
         components: {
@@ -93,6 +93,6 @@ const options = {
             }
         }
     },
-    apis: ["./src/*.ts"] // Path to the API docs
+    apis: [__dirname + "/*.ts"] // Use absolute path
 };
 exports.specs = (0, swagger_jsdoc_1.default)(options);
