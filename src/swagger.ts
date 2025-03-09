@@ -10,7 +10,7 @@ const options: swaggerJsdoc.Options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
+        url: "https://git-server-lo5u.onrender.com/",
         description: "Development server"
       }
     ],
